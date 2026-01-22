@@ -1,0 +1,57 @@
+<h3 class="section-title">List from Main – First 5</h3>
+
+<div class="table-wrapper">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of (httpusers$ | async)?.slice(0,5)">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <a href="https://{{ user.website }}" target="_blank">
+            {{ user.website }}
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 class="section-title">List from Main – Second 5</h3>
+
+<div class="table-wrapper">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of (httpusers$ | async)?.slice(5,10)">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <a href="https://{{ user.website }}" target="_blank">
+            {{ user.website }}
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
