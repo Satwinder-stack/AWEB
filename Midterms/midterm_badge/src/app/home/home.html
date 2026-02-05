@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Community Help Desk Portal</h1>
+  <p>Welcome! Browse the latest service tickets and announcements below.</p>
+  <p><strong>Today:</strong> {{ today | date:'fullDate' }}</p>
+
+  <h2>Latest Service Tickets</h2>
+
+  <div class="cards-grid">
+    <div class="card" *ngFor="let post of latestPosts$ | async">
+      <strong>{{ post.title | uppercase }}</strong>
+      <p>{{ post.body | slice:0:100 }}...</p>
+    </div>
+  </div>
+
+  <p><a routerLink="/services">View All Tickets</a></p>
+</div>

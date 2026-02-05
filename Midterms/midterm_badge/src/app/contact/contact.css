@@ -1,0 +1,161 @@
+/* ---------- Container ---------- */
+:host {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+p.description {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ---------- Grid ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ---------- Contact Form ---------- */
+.contact-form h2 {
+  margin-bottom: 1.5rem;
+  color: #007bff;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+/* Inputs & Textarea */
+input, textarea {
+  width: 100%;
+  padding: 1rem 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background: #f9f9f9;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
+  transition: all 0.3s ease;
+}
+
+input:hover, textarea:hover {
+  border-color: #80bdff;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 0 8px rgba(0,123,255,0.1);
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.2);
+}
+
+/* Floating Labels */
+label {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f9f9f9;
+  padding: 0 0.25rem;
+  font-size: 0.9rem;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label,
+textarea:focus + label,
+textarea:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  font-size: 0.75rem;
+  color: #007bff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Button */
+button {
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* ---------- Contact Info ---------- */
+.contact-info h2 {
+  margin-bottom: 1rem;
+  color: #007bff;
+}
+
+.contact-info p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.contact-info p strong {
+  color: #333;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="card">
+    <h2>Our Services</h2>
+    <input
+      type="search"
+      placeholder="Search services by title or description"
+      [(ngModel)]="searchTerm"
+    />
+    <ul>
+      <li *ngFor="let post of (posts$ | async) | filterPosts:searchTerm">
+        <strong>{{ post.title | titlecase }}</strong>
+        <p>{{ post.body | truncate:120 }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
