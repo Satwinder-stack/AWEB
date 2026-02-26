@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="card shadow-lg p-4 mt-4">
+    <h2 class="text-center mb-4">Reactive Form</h2>
+
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+
+      <div class="row">
+
+        <!-- Username -->
+        <div class="col-md-6 mb-3">
+          <label>Username</label>
+          <input type="text" class="form-control" formControlName="username" placeholder="Coco Martin">
+          <small class="text-danger" *ngIf="f['username'].touched && f['username'].invalid">
+            Username is required (min 3 characters).
+          </small>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6 mb-3">
+          <label>Email</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="email@gmail.com">
+          <small class="text-danger" *ngIf="f['email'].touched && f['email'].invalid">
+            Valid email is required.
+          </small>
+        </div>
+
+        <!-- Password -->
+        <div class="col-md-6 mb-3">
+          <label>Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="********">
+          <small class="text-danger" *ngIf="f['password'].touched && f['password'].invalid">
+            Password must be at least 6 characters.
+          </small>
+        </div>
+
+        <!-- Phone -->
+        <div class="col-md-6 mb-3">
+          <label>Phone Number</label>
+          <input type="text" class="form-control" formControlName="phone" placeholder="(63+) 930 531 910">
+          <small class="text-danger" *ngIf="f['phone'].touched && f['phone'].invalid">
+            Enter a valid 11-digit phone number.
+          </small>
+        </div>
+
+        <!-- Role -->
+        <div class="col-md-6 mb-3">
+          <label>Role</label>
+          <select class="form-select" formControlName="role">
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="guest">Guest</option>
+          </select>
+          <small class="text-danger" *ngIf="f['role'].touched && f['role'].invalid">Role is required.</small>
+        </div>
+
+        <!-- Gender -->
+        <div class="col-md-6 mb-3">
+          <label>Gender</label><br>
+          <input type="radio" formControlName="gender" value="Male"> Male
+          <input type="radio" formControlName="gender" value="Female" class="ms-3"> Female
+          <small class="text-danger d-block" *ngIf="f['gender'].touched && f['gender'].invalid">Gender is required.</small>
+        </div>
+
+        <!-- Status -->
+        <div class="col-md-6 mb-3">
+          <label>Status</label><br>
+          <input type="radio" formControlName="status" value="Permanent"> Permanent
+          <input type="radio" formControlName="status" value="Probationary" class="ms-3"> Probationary
+          <small class="text-danger d-block" *ngIf="f['status'].touched && f['status'].invalid">Status is required.</small>
+        </div>
+
+        <!-- Address -->
+        <div class="col-md-6 mb-3">
+          <label>Address</label>
+          <textarea class="form-control" formControlName="address"></textarea>
+          <small class="text-danger" *ngIf="f['address'].touched && f['address'].invalid">Address is required.</small>
+        </div>
+
+        <!-- Comments -->
+        <div class="col-md-6 mb-3">
+          <label>Comments</label>
+          <textarea class="form-control" formControlName="comments"></textarea>
+        </div>
+
+        <!-- Age -->
+        <div class="col-md-4 mb-3">
+          <label>Age</label>
+          <input type="number" class="form-control" formControlName="age">
+          <small class="text-danger" *ngIf="f['age'].touched && f['age'].invalid">Age is required.</small>
+        </div>
+
+        <!-- Department -->
+        <div class="col-md-4 mb-3">
+          <label>Department</label>
+          <input type="text" class="form-control" formControlName="department">
+          <small class="text-danger" *ngIf="f['department'].touched && f['department'].invalid">Department is required.</small>
+        </div>
+
+        <!-- Start Date -->
+        <div class="col-md-4 mb-3">
+          <label>Start Date</label>
+          <input type="date" class="form-control" formControlName="startDate">
+          <small class="text-danger" *ngIf="f['startDate'].touched && f['startDate'].invalid">Start date is required.</small>
+        </div>
+
+      </div>
+
+      <button class="btn btn-primary w-100" type="submit" [disabled]="reactiveForm.invalid">
+        Submit
+      </button>
+
+    </form>
+  </div>
+</div>

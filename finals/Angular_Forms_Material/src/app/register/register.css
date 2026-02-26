@@ -1,0 +1,165 @@
+/* General Layout */
+.page-wrapper {
+  --bg-color: #f4f7fe;
+  --bg-color-text: #1a1a1a;
+  --card-bg: #ffffff;
+  --text-secondary: #666;
+  --selection-bg: #f8f9fa;
+  --border-color: #ccc;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Stack the two forms vertically */
+  align-items: center;
+  justify-content: flex-start; /* Allow scrolling */
+  background-color: var(--bg-color);
+  padding: 40px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode Variables */
+.page-wrapper.dark-theme {
+  --bg-color: #121212;
+  --bg-color-text: #ffffff;
+  --card-bg: #1e1e1e;
+  --text-secondary: #bbb;
+  --selection-bg: #2d2d2d;
+  --border-color: #444;
+}
+
+/* Container for each form */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg); /* Use card-bg so it pops against page-bg */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom: 50px; /* Space between the two forms */
+  color: var(--bg-color-text);
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+header h2 {
+  margin: 0;
+  color: var(--bg-color-text);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Form Grid */
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.form-row mat-form-field {
+  flex: 1;
+}
+
+/* Form Elements */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.selection-area {
+  margin: 10px 0;
+  padding: 15px;
+  background: var(--selection-bg);
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.dark-theme .selection-area {
+  border-color: var(--border-color);
+}
+
+.section-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--bg-color-text);
+  margin-bottom: 10px;
+}
+
+/* Submit Button */
+.submit-btn {
+  margin-top: 20px;
+  height: 50px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border-radius: 8px !important;
+}
+
+/* Success Message */
+.success-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dark-theme .success-box {
+  background: #1b5e20;
+  color: #c8e6c9;
+}
+
+/* Prefix and Icon Colors */
+.num, .role, mat-icon {
+  color: var(--bg-color-text);
+}
+
+/* Dark Mode Overrides for Angular Material */
+.dark-theme ::v-deep .mat-mdc-form-field-label {
+  color: var(--text-secondary) !important;
+}
+
+.dark-theme ::v-deep .mat-mdc-input-element {
+  color: #ffffff !important;
+}
+
+/* Visual divider */
+hr {
+  width: 100%;
+  max-width: 600px;
+  border: 0;
+  border-top: 1px dashed var(--border-color);
+  margin-bottom: 50px;
+}
+
+/* Responsive fix */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
