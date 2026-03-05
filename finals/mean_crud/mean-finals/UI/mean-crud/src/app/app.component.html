@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="main-wrapper-full">
+  <div class="full-width-dashboard">
+
+    <header class="text-center mb-4">
+      <h1 class="display-5 fw-bold text-dark">Library <span class="text-primary">Pro</span></h1>
+      <p class="text-muted">Inventory Management System</p>
+    </header>
+
+    <div class="stats-grid mb-4">
+      <div class="stat-box">
+        <span class="stat-label">Total Books</span>
+        <span class="stat-value">{{ books.length }}</span>
+      </div>
+      <div class="stat-box featured">
+        <span class="stat-label">Inventory Value</span>
+        <span class="stat-value">${{ totalInventoryValue.toFixed(2) }}</span>
+      </div>
+    </div>
+
+    <div class="card main-card shadow-lg">
+      <div class="card-body p-4">
+
+        <div class="d-flex gap-2 mb-4">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+            <input type="text" [(ngModel)]="searchText" class="form-control border-start-0 ps-0" placeholder="Search title or author...">
+          </div>
+        </div>
+
+        <div class="form-section-full mb-4">
+          <div class="force-inline-row">
+
+            <div class="field-container">
+              <label>Title</label>
+              <input [(ngModel)]="bookForm.title" placeholder="Book Title">
+            </div>
+
+            <div class="field-container">
+              <label>Author</label>
+              <input [(ngModel)]="bookForm.author" placeholder="Author">
+            </div>
+
+            <div class="field-container">
+              <label>Category</label>
+              <input [(ngModel)]="bookForm.category" placeholder="Category">
+            </div>
+
+            <div class="field-container grow-2">
+              <label>Description</label>
+              <input [(ngModel)]="bookForm.description" placeholder="Short description">
+            </div>
+
+            <div class="field-container small-width">
+              <label>Price</label>
+              <div class="price-input">
+                <span>$</span>
+                <input type="number" [(ngModel)]="bookForm.price">
+              </div>
+            </div>
+
+            <div class="button-container">
+              <button *ngIf="!isEditMode" (click)="addBook()" class="btn-primary-action">ADD BOOK</button>
+
+              <div *ngIf="isEditMode" class="edit-group">
+                <button (click)="updateBook()" class="btn-save-action">SAVE</button>
+                <button (click)="cancelEdit()" class="btn-cancel-action">✕</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover align-middle custom-table">
+            <thead>
+              <tr>
+                <th>Book Details</th>
+                <th>Category</th>
+                <th class="text-end">Price</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let b of filteredBooks">
+                <td>
+                  <div class="fw-bold text-dark">{{ b.title }}</div>
+                  <div class="small text-muted">by {{ b.author }}</div>
+                </td>
+                <td><span class="badge rounded-pill bg-soft-primary">{{ b.category }}</span></td>
+                <td class="text-end fw-bold text-success">${{ b.price }}</td>
+                <td class="text-center">
+                  <div class="d-flex justify-content-center gap-2">
+                    <button (click)="editButtonClick(b)" class="btn btn-sm btn-outline-warning fw-bold">EDIT</button>
+                    <button (click)="deleteBook(b.id)" class="btn btn-sm btn-outline-danger fw-bold">DELETE</button>
+                  </div>
+                </td>
+              </tr>
+              <tr *ngIf="filteredBooks.length === 0">
+                <td colspan="4" class="text-center py-5 text-muted">No books found in the collection.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

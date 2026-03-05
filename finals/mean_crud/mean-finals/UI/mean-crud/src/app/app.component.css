@@ -1,0 +1,104 @@
+/* Layout Centralization & Full Width */
+.main-wrapper-full {
+  width: 100% !important;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.full-width-dashboard {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Stats Bar */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-box {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stat-box.featured { background: #0d6efd; color: white; }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; font-weight: 700; opacity: 0.8; }
+.stat-value { font-size: 1.5rem; font-weight: 800; }
+
+/* The Forced Row Styling */
+.force-inline-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  gap: 20px !important; /* Proper Gaps */
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.field-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.grow-2 { flex: 2 !important; }
+.small-width { flex: 0 0 120px !important; }
+
+.field-container label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.field-container input {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Price Input Styling */
+.price-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  padding-left: 10px;
+}
+.price-input input { border: none !important; }
+
+/* Buttons */
+.btn-primary-action, .btn-save-action {
+  height: 40px;
+  padding: 0 25px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary-action { background: #0d6efd; }
+.btn-save-action { background: #198754; }
+.btn-cancel-action { height: 40px; width: 40px; background: #dc3545; color: white; border: none; border-radius: 8px; margin-left: 5px; }
+
+.edit-group { display: flex; align-items: center; }
+
+/* Table Styling */
+.custom-table thead th { background: #f8fafc; color: #64748b; font-weight: 600; padding: 15px; border-bottom: 2px solid #edf2f7; }
+.bg-soft-primary { background: #e0e7ff; color: #4338ca; padding: 5px 12px; }
+.text-success { color: #10b981 !important; }
