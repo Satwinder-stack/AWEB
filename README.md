@@ -20,3 +20,6 @@ This repository serves as both a **learning archive and a technical reference** 
 
 - **Dynamic User Interfaces**  
   Implementation of interactive UI elements using Angular’s data binding and event handling.
+
+- **Routing and Navigation**  
+  Examples of Angular routing for building multi-page application experiences.
