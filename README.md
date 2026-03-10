@@ -26,3 +26,6 @@ This repository serves as both a **learning archive and a technical reference** 
 
 - **Service Integration**  
   Use of Angular services to manage data and share functionality across components.
+
+- **Semester Activity Archive**  
+  Organized collection of coursework and exercises demonstrating progressive learning throughout the semester.
