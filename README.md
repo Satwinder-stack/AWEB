@@ -23,3 +23,6 @@ This repository serves as both a **learning archive and a technical reference** 
 
 - **Routing and Navigation**  
   Examples of Angular routing for building multi-page application experiences.
+
+- **Service Integration**  
+  Use of Angular services to manage data and share functionality across components.
