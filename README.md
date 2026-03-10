@@ -24,6 +24,12 @@ This repository serves as both a **learning archive and a technical reference** 
 - **Routing and Navigation**  
   Examples of Angular routing for building multi-page application experiences.
 
+---
+
+## Copyright
+© 2026 **Advanced Dynamic Web Applications Activities**. All Rights Reserved.  
+All projects, code, and implementations within this repository are protected under copyright law.
+
 - **Service Integration**  
   Use of Angular services to manage data and share functionality across components.
 
