@@ -12,3 +12,8 @@ The activities explore core Angular concepts such as **component-based architect
 This repository serves as both a **learning archive and a technical reference** for the concepts and implementations practiced during the course.
 
 ---
+
+## Core Features
+
+- **Angular Component Development**  
+  Multiple activities demonstrating how to create and manage reusable Angular components.
