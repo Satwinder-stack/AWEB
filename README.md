@@ -17,3 +17,6 @@ This repository serves as both a **learning archive and a technical reference** 
 
 - **Angular Component Development**  
   Multiple activities demonstrating how to create and manage reusable Angular components.
+
+- **Dynamic User Interfaces**  
+  Implementation of interactive UI elements using Angular’s data binding and event handling.
